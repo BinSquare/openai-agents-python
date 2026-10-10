@@ -24,7 +24,8 @@ try:
     from smol.openai_sandbox import SmolSandboxClient, SmolSandboxClientOptions
 except ImportError as exc:
     raise SystemExit(
-        "Install the Smol sandbox provider with: uv run --with 'smolmachines[openai-agents]' python examples/sandbox/extensions/smol_runner.py"
+        "The Smol SandboxAgent provider is unavailable. It is pending a smolmachines release "
+        "(smol-machines/smol#267); install a version containing smol.openai_sandbox."
     ) from exc
 
 

@@ -12,7 +12,7 @@ All examples require `OPENAI_API_KEY` for model calls. Cloud backends also need 
 
 ## Smol Machines (local or cloud microVM)
 
-Install the provider alongside this SDK:
+The Python provider is pending release in `smol-machines/smol#267`. Once it is published, install `smolmachines[openai-agents]` alongside this SDK and run:
 
 ```bash
 uv run --with 'smolmachines[openai-agents]' python examples/sandbox/extensions/smol_runner.py
