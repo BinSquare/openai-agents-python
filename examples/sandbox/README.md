@@ -27,7 +27,7 @@ Most examples call a model through `Runner`, so set `OPENAI_API_KEY` in the repo
 
 ## Cloud backend examples
 
-Cloud-provider examples live under [`extensions/`](./extensions/). They cover E2B, Modal, and Daytona sandbox backends and require provider-specific credentials in addition to `OPENAI_API_KEY`.
+Provider examples live under [`extensions/`](./extensions/). They include Smol Machines microVMs, which run locally without a provider account or in the cloud with `SMOL_CLOUD_TOKEN`, alongside E2B, Modal, Daytona, and other backends. Model calls still require `OPENAI_API_KEY`.
 
 ## Tutorial scaffold
 

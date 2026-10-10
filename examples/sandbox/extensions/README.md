@@ -1,14 +1,24 @@
-# Cloud Sandbox Extension Examples
+# Sandbox Provider Examples
 
-These examples are for manual verification of the cloud sandbox backends that live under `agents.extensions.sandbox`.
+These examples manually verify cloud sandbox backends in `agents.extensions.sandbox` and the Smol Machines provider, which runs locally or in the cloud.
 
 They intentionally keep the flow simple:
 
 1. Build a tiny manifest in memory.
 2. Create a `SandboxAgent` that inspects that workspace through one shell tool.
-3. Run the agent against E2B, Modal, Daytona, Cloudflare, Runloop, Blaxel, or Vercel.
+3. Run the agent against a sandbox provider.
 
-All of these examples require `OPENAI_API_KEY`, because they call the model through the normal `Runner` path. Each cloud backend also needs its own provider credentials.
+All examples require `OPENAI_API_KEY` for model calls. Cloud backends also need provider credentials; Smol local runs do not.
+
+## Smol Machines (local or cloud microVM)
+
+Install the provider alongside this SDK:
+
+```bash
+uv run --with 'smolmachines[openai-agents]' python examples/sandbox/extensions/smol_runner.py
+```
+
+Set `OPENAI_API_KEY` on the host to make a model call. The local VM needs no cloud account, Docker daemon, or guest network access. For a cloud VM, set `SMOL_CLOUD_TOKEN` (or run `smol auth login` on the host), then pass `--target cloud` to the same command. Use `--image` to choose a different Linux image; both modes default to `alpine:3.20`. The sample gives the VM only a small README and no model or cloud credentials.
 
 ## E2B
 
