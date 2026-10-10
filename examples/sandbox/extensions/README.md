@@ -164,15 +164,14 @@ Cloudflare sandboxes support native cloud bucket mounts through `CloudflareBucke
 
 ## What to expect
 
-Each script asks the model to inspect a small workspace and summarize it. A
-successful run should:
+Each script asks the model to inspect a small workspace and summarize it. A successful run should:
 
-1. Start the chosen cloud sandbox backend.
+1. Start the chosen local or cloud sandbox backend.
 2. Materialize the manifest into the sandbox workspace.
 3. Call the shell tool at least once.
 4. Print either streamed text or a final short answer about the workspace.
 
-These examples are not live-validated in CI because they depend on external cloud credentials, but they are shaped so contributors can verify backend behavior locally with one command per provider.
+These examples are not live-validated in CI because they require a model API key and either host virtualization or cloud credentials. Contributors can verify each backend with one command.
 
 ## Vercel
 

@@ -33,7 +33,7 @@ async def run_example(
     *,
     target: Literal["local", "cloud"] = "local",
     image: str = "alpine:3.20",
-    model: str = "gpt-5.4",
+    model: str = "gpt-5.6-sol",
 ) -> str:
     """Ask an agent to inspect a small file in an isolated VM."""
     manifest = Manifest(
@@ -68,7 +68,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--target", choices=("local", "cloud"), default="local")
     parser.add_argument("--image", default="alpine:3.20")
-    parser.add_argument("--model", default="gpt-5.4")
+    parser.add_argument("--model", default="gpt-5.6-sol")
     args = parser.parse_args()
     print(asyncio.run(run_example(target=args.target, image=args.image, model=args.model)))
 
